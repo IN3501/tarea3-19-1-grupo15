@@ -1,0 +1,57 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Reservar Mesa
+{% endblock title %}
+
+{% block content %}
+
+<div id="descripcion" class="container">
+    <h1>Reservacion de Mesas </h1>
+	<h3>Por favor rellenar formulario siguiente</h3>
+
+
+    <form action="/envio" method="POST" autocomplete="off">  {% csrf_token %}
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre</label>
+      <input type="text" class="form-control" id="exampleText" placeholder="Ingrese nombre" name="inputText">
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleNumber">Telefono de contacto</label>
+      <input type="number" class="form-control" id="exampleNumber" placeholder="Ingrese Telefono" name="inputNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Correo electronico</label>
+      <input type="email" class="form-control" id="exampleEmail" placeholder="Ingrese email" name="inputEmail">
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Seleccionar Horario</label>
+      <select class="form-control" id="exampleSelect" name="input Select">
+        <option value="horario1">10:00 - 12:00 ($7.000)</option>
+        <option value="horario2">12:00 - 14:00 ($7.000)</option>
+        <option value="horario3">14:00 - 16:00 ($7.000)</option>
+        <option value="horario4">18:00 - 20:00 ($9.000)</option>
+        <option value="horario5">20:00 - 22:00 ($12.000)</option>
+       
+        \
+      </select>
+    </div>
+
+    
+
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">Enviar Reserva</button>
+    </div>
+
+    
+    </form>
+<div>
+
+{% endblock content %}
+    

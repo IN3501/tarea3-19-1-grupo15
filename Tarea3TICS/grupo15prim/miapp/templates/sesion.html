@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Inicio de sesion.
+{% endblock title %}
+
+{% block content %}
+
+<div id="descripcion" class="container">
+    <h1>Formulario de inicio de sesión:</h1>
+
+    <form action="/envio3/" method="POST" autocomplete="off">  {% csrf_token %}
+
+    <div class="form-group">
+      <label for="exampleNumber">RUT</label>
+      <input type="number" class="form-control" id="exampleNumber2" placeholder="Ingrese RUT sin puntos ni guión" name="inputNumber2">
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">Contraseña</label>
+      <input type="password" class="form-control" id="examplePassword" placeholder="ingrese contraseña" name="inputPassword">
+    </div>
+    
+
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    </div>
+
+    <a href="{% url 'registro' %}">Si no tiene una cuenta registrese aquí.</a>
+    </form>
+</div>
+
+
+
+{% endblock content %}
